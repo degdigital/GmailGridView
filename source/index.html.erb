@@ -1,0 +1,34 @@
+---
+title: Gmail Grid View
+---
+
+<h1>Add Gmail Microdata to Your Email</h1>
+<h2>Description</h2>
+
+<%= partial "partials/grid-view" %>
+
+<div class="microdata">
+	<label>Copy &amp; insert into your email's HTML </label>
+	<pre translate="no"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">itemscope</span><span class="pln"> </span><span class="atn">itemtype</span><span class="pun">=</span><span class="atv">"http://schema.org/EmailMessage"</span><span class="tag">&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">itemprop</span><span class="pun">=</span><span class="atv">"publisher"</span><span class="pln"> </span><span class="atn">itemscope</span><span class="pln"> </span><span class="atn">itemtype</span><span class="pun">=</span><span class="atv">"http://schema.org/Organization"</span><span class="tag">&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;meta</span><span class="pln"> </span><span class="atn">itemprop</span><span class="pun">=</span><span class="atv">"name"</span><span class="pln"> </span><span class="atn">content</span><span class="pun">=</span><span class="atv">"<span id="company-name-markup"></span>"</span><span class="tag">/&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">itemprop</span><span class="pun">=</span><span class="atv">"url"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"<span id="company-url-markup"></span>"</span><span class="tag">/&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">itemprop</span><span class="pun">=</span><span class="atv">"url/googlePlus"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"<span id="company-url-plus-markup"></span>"</span><span class="tag">/&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;/div&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">itemprop</span><span class="pun">=</span><span class="atv">"about"</span><span class="pln"> </span><span class="atn">itemscope</span><span class="pln"> </span><span class="atn">itemtype</span><span class="pun">=</span><span class="atv">"http://schema.org/Offer"</span><span class="tag">&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">itemprop</span><span class="pun">=</span><span class="atv">"image"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"<span id="featured-image-markup"></span>"</span><span class="tag">/&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;/div&gt;</span><span class="pln"><br></span><span class="tag">&lt;/div&gt;</span><span class="pln"><br></span></pre>
+	<button id="modify">Modify</button>
+</div>
+<div class="grid-form">
+	<label for="company-name">Your Company Name</label>
+	<input id="company-name" type="text">
+	
+	<label for="company-url">Your Company Homepage</label>
+	<input id="company-url" type="url">
+
+	<label for="company-url-plus">Your Company Google+ URL</label>
+	<input id="company-url-plus" type="url">
+	<small>Optional but recommended—will pull in your logo/profile image</small>
+	
+	<label for="featured-image">Featured Image URL</label>
+	<input id="featured-image" type="url">
+	<small>Min. 580px x 400px; host your own image or use a free service</small>
+	
+	<label for="subject-line">Subject Line</label>
+	<input id="subject-line" type="text">
+
+	<button id="generate">Generate Grid View</button>
+</div>

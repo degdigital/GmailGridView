@@ -1,0 +1,122 @@
+@import "normalize";
+@import "compass/utilities/general/clearfix";
+@import "compass/css3";
+@import "compass/css3/inline-block";
+
+@import "Partials/utilities";
+@import "Partials/grid-view";
+
+@import url(http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic);
+
+body {
+    font-size: 1em;
+	font-family: 'Asap', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #666;
+}
+
+a {
+	color: #1882c5;
+	text-decoration: none;
+	&:hover { color: #84C2E9; }
+}
+h1 {
+	font-size: 2em;
+	color: #8dc63f;
+	margin: 0 0 .5em;
+}
+h2 {
+	font-size: 1.25em;
+	line-height: 1.3em;
+	margin: 0 0 2em;
+	font-weight: normal;
+	color: #515151;
+}
+.header {
+	background: #1982c4;
+	padding: 1em 0;
+	img { display: inline-block; }
+}
+.main, .wrap {
+	max-width: 57em;
+	margin: 0 auto;
+	padding: 0 1.5em;
+}
+.main {
+	padding: 2em 1.5em;
+	min-height: 50.63em;
+}
+
+.grid-form,
+.microdata {
+	margin-top: 2em;
+}
+label,
+input[type=text],
+input[type=url] {
+	font-size: 1.1em;
+	display: block;
+}
+label {
+	margin: 1em 0 0.3em 0;
+	font-weight: bold;
+	&:first-child { margin-top: 0; }
+}
+input[type=text],
+input[type=url] {
+	width: 100%;
+	margin: 0;
+	padding: .5em;
+	@include box-sizing(border-box);
+	background: #fff;
+	border: 1px solid #ccc;
+}
+button {
+	display: block;
+	padding: 0 1em;
+	margin: 2em 0 0 0;
+	height: 2.5em;
+	background-color: #8dc63f;
+	color: #fff;
+	border: 0;
+	border-radius: 0.25em;
+	text-align: center;
+	font-weight: bold;
+	&:hover { background: #72a230; }
+}
+.microdata {
+	display: none;
+	pre {
+		font-size: 0.75em;
+		width: 100%;
+		margin: 1.75em 0 0;
+		padding: 1em;
+		line-height: 1.5;
+		@include box-sizing(border-box);
+		border: 1px solid #ccc;
+		background-color: #FAFAFA;
+		.tag { color: #008; }
+		.pln { color: #000; }
+		.atn { color: #606; }
+		.atv { color: #080; }
+	}
+}
+
+#grid-view {
+	margin: 0 auto;
+}
+
+@media only screen and (min-width: 48em) {
+	h1 { font-size: 2.75em; }
+	h2 { font-size: 1.45em; margin: 0 0 3em; }
+	.main {
+		@include clearfix;
+		padding: 3em 1.5em;
+		.grid-form, .microdata {
+			margin-left: 22em;
+		}
+		#grid-view {
+			float: left;
+			margin-top: 0;
+		}
+	}
+}
