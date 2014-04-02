@@ -13,9 +13,15 @@ $('#generate').click(function(e) {
         $('.grid-view-desc .from').text($("#company-name").val());
         $('#company-name-markup').text($("#company-name").val());
     }
+
     if( $('#company-url').val().length > 0 ) {
         $('#company-url-markup').text($("#company-url").val());
+        //...make api call & replace sender image...//
     }
+    else if( $('#company-url-plus').val().length <= 0 && $('#company-name').val().length > 0) {
+        $('.google-icon img').replaceWith($("#company-name").val().slice(0,1));
+    }
+
     if( $('#company-url-plus').val().length > 0 ) {
         $('#company-url-plus-markup').text($("#company-url-plus").val());
     }
@@ -26,6 +32,7 @@ $('#generate').click(function(e) {
     if( $('#subject-line').val().length > 0 ) {
         $('.grid-view-desc .subject b').text($("#subject-line").val());
     }
+
     $('.grid-form').hide();
     $('.microdata').show();
 });
