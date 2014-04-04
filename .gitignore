@@ -19,3 +19,4 @@
 
 # Ignore OS X DS Store Files
 .DS_Store
+.cache/*
