@@ -1,6 +1,6 @@
 function GmailGridView($scope) {
 
-    $scope.featuredImageUrl = '';
+    $scope.featuredImageCss = "background-image: url('images/featured-image.png');";
     $scope.googlePlusImageUrl = 'images/sender-image.png';
     $scope.selected = 'form';
 
@@ -14,7 +14,9 @@ function GmailGridView($scope) {
             $scope.googlePlusImageUrl = data.image.url;                    
         }
     };
-    
+    $scope.setFeaturedImage = function() {
+        $scope.featuredImageCss =  "background-image: url('"+ $scope.featuredImage +"');";
+    },
     $scope.fetchGooglePlusData = function() {
         var url = $scope.googlePlus.split('+');
         var username = url[1];

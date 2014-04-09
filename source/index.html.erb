@@ -11,7 +11,7 @@ title: Gmail Grid View
 </ul>
 
 <div id="grid-view">
-	<div class="grid-view-hero" style="background-image: url('{{featuredImageUrl}}');">
+	<div class="grid-view-hero" style="{{featuredImageCss}}">
 		<div></div>
 	</div>
 	<div class="grid-view-desc">
@@ -63,7 +63,7 @@ title: Gmail Grid View
 		<span class="error" ng-show="gridForm.googlePlus.$error.url">Invalid url.</span>
 		
 		<label for="featured-image">Featured Image URL</label>
-		<input id="featured-image" name="featuredImage" type="url" ng-model="featuredImage" ng-blur="featuredImageUrl = featuredImage" />
+		<input id="featured-image" name="featuredImage" type="url" ng-model="featuredImage" ng-blur="setFeaturedImage()" />
 		<small>Min. 580px x 400px; host your own image or use a free service</small>
 		<span class="error" ng-show="gridForm.featuredImage.$error.url">Invalid url.</span>
 		
