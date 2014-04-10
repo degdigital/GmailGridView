@@ -8,7 +8,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <title><%= data.page.title || "Gmail Grid View" %></title>
+        <link rel="shortcut icon" href="http://www.degdigital.com/wp-content/themes/degwp/images/favicon.gif" />
+        <title><%= data.page.title || "DEG | Gmail Grid View" %></title>
         <%= stylesheet_link_tag "all" %>
         <%= javascript_include_tag  "plugins/modernizr","init" %>
     </head>
@@ -23,10 +24,35 @@
         <div class="main" ng-app  ng-controller="GmailGridView">
             <%= yield %>
         </div>
+        <footer class="footer">
+            <div class="wrap">
+                <ul class="contact">
+                                <li class="phone"><a href="tel:9134989988">913.498.9988</a></li>
+                    <li class="email"><a href="http://www.degdigital.com/connect">Email Us</a></li>
+                    <li class="twitter"><a href="http://www.twitter.com/degdigital" target="_blank">Follow Us</a></li>
+                    <li class="facebook"><a href="http://www.facebook.com/degdigital" target="_blank">Like Us</a></li>
+                    <li class="linkedin"><a href="http://www.linkedin.com/company/DEGdigital" target="_blank">Link Up</a></li>
+                </ul>
+                <div class="stayintouch">
+                    <form action="http://cl.exct.net/subscribe.aspx?lid=17770822" name="subscribeForm" method="post">
+                        <fieldset>
+                            <h4>Stay in touch</h4>
+                            <p class="receiveEmails">Receive emails about the latest happenings at DEG.</p>
+                            <div class="field">
+                                <input type="email" placeholder="Email Address" name="Email Address" id="email-address">
+                                <input type="submit" value="GO">
 
+                                <input type="hidden" name="MID" value="12358">
+                                <input type="hidden" name="SubAction" value="sub_add_update">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </footer>
         <script src="https://apis.google.com/js/client:plusone.js?onload=onGooglePlusLoad"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.4/angular.min.js"></script>
-        <%= javascript_include_tag  "all" %>
+        <%= javascript_include_tag  "plugins/croppic", "all" %>
     </body>
 </html>

@@ -1,0 +1,168 @@
+.header {
+	@include background(linear-gradient(top, #1982c4 25%, #0f547d 100%));
+	padding: 1em 0;
+	img { display: inline-block; }
+}
+
+.footer {
+	background-color: #373737;
+	@include clearfix();
+	text-align: center;
+	.stayintouch {
+		padding: 2em;
+		background-color: #272727;
+		width: 100%;
+		padding: 1.5em 0;
+
+		h4 {
+		    color: #fff;
+		    position: relative;
+		    @include inline-block;
+		    text-transform: uppercase;
+		    @include brand-font();
+		    font-size: 1.5em;
+		    font-weight: bold;
+		    margin: 0;
+		    padding-left: 1.5em;
+		}
+		h4:before {
+		    position: absolute;
+		    top: -5px;
+		    left: -5px;
+		    content:'m';
+		    font-size: 35px;
+		    font-family: iconsregular;
+		    color: #bebfbf;
+		    font-weight: normal;
+		    text-transform:none;
+		}
+		p {
+		  font-size: 1.1em;
+		  color: #999;
+		}
+	  	fieldset {
+		    width: 16em;
+		    margin: 0 auto;
+		    .field {
+		      width: 12.8em;
+		      margin: 0 auto;
+		      @include clearfix();
+		    }
+	  	}
+	  	.placeholder {
+	      	line-height: 2em;
+	    }
+	    .placeholderwrap {
+	      	float: left;
+	    }
+	    input[type="email"], input[type="text"] {
+			padding: 0 1em;
+			width: 9.5em;
+			height: 2.2em;
+			font-size: .9em;
+			border: 0;
+			color: #ccc;
+			background-color: #3a3a3a;
+	    }
+	    input[type="submit"] {
+			width: 40px;
+			margin-left: -40px;
+	    }
+	    input { vertical-align: top; }
+	}
+	ul.contact {
+	    margin: 0;
+	    padding: 1em 1em 0.5em 1em;
+	    li {
+	      @include inline-block();
+	      padding: 0;
+	      margin: 0 0.2em 0.5em 0;
+
+	      list-style: none;
+
+	      a, a:active, a:hover, a:visited {
+	        font-size: 0.95em;
+	        font-weight: bold;
+	        color: #9b9b9b;
+	        text-transform: uppercase;
+	        padding: 0.65em 0.8em 0.65em 2.8em;
+	        position: relative;
+	        display: block;
+	        background-color: #242424;
+	        @include border-radius(8px);
+	      }
+
+	      a:hover {
+	        background-color: #000;
+	      }
+	    }
+	    li a:before {
+	      font-family: iconsregular;
+	      position: absolute;
+	      font-weight: normal;
+	      top: -2px;
+	      left: 6px;
+	      font-size: 36px;
+	      text-transform: none;
+	      color: #fff;
+	    }
+	    .phone a:before { content: 'q'; top: 0; }
+	    .email a:before { content: 'm'; }
+	    .twitter a:before { content: 't'; }
+	    .facebook a:before { content: 'f'; }
+	    .linkedin a:before { content: 's'; top: -5px; }
+	}
+
+	@media only screen and (min-width: 30em) {
+		text-align: left;
+		min-height: 11em;
+		padding: 0 0 2em 0;
+		.wrap {
+		  position: relative;
+		}
+		.stayintouch {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  border-radius: 0 0 0.5em 0.5em;
+		  font-size: .9em;
+		  width: 17em;
+		  height: 13.9em;
+		  padding: 0;
+		  overflow: hidden;
+		  fieldset {
+		    width: auto;
+		    padding: 2em;
+		    .field { width: auto; }
+		  }
+		  h4 { font-size: 1.4em; padding-left: 3.2em; }
+		  h4:before { top: -15px; font-size: 65px; }
+		  input { float: left; }
+		}
+		ul.contact {
+		  margin-left: 15.3em;
+		  max-width: 29em;
+		}
+	}
+	input[type="submit"] {
+		background-color: #8dc63f;
+		color: #fff;
+		border: 0;
+		@include border-radius(.25em);
+		text-transform: uppercase;
+		height: 1.95em;
+		padding: 0 .5em;
+		text-align: center;
+		margin-left: -.25em;
+		font-weight: bold;
+		position: relative;
+	}
+	@media only screen and (min-width: 47.5em) {
+	    ul.contact {
+			padding: 1.8em 1em 0.5em 1.8em;
+			li { font-size: 1.2em; }
+			li a:before { font-size: 42px; }
+	    }
+	}
+	@media only screen and (min-width: 60em) { .stayintouch { input[type=email] { width: 12.5em; } } }
+}

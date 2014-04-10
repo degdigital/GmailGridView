@@ -4,13 +4,14 @@
 @import "compass/css3/inline-block";
 
 @import "Partials/utilities";
+@import "Partials/branding";
+@import "Partials/frame";
 @import "Partials/grid-view";
-
-@import url(http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic);
+@import "croppic.css";
 
 body {
     font-size: 1em;
-	font-family: 'Asap', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	@include brand-font;
     color: #666;
 }
 
@@ -31,11 +32,7 @@ h2 {
 	font-weight: normal;
 	color: #515151;
 }
-.header {
-	background: #1982c4;
-	padding: 1em 0;
-	img { display: inline-block; }
-}
+
 .main, .wrap {
 	max-width: 57em;
 	margin: 0 auto;
@@ -43,12 +40,20 @@ h2 {
 }
 .main {
 	padding: 2em 1.5em;
-	min-height: 50.63em;
+	min-height: 44em;
+}
+
+.footer {
+	background: #373737;
 }
 
 .grid-form,
 .microdata {
 	margin-top: 2em;
+}
+fieldset {
+	border: 0;
+	margin: 0;
 }
 label,
 input[type=text],

@@ -29,3 +29,45 @@ function GmailGridView($scope) {
         })
     }
 }
+
+// Newsletter Signup
+var DEG = {};
+
+DEG.subscribe = {
+    form: null,
+
+    init: function () {
+
+        this.form = $(".stayintouch form");
+
+        if(this.form.length == 0)
+            return;
+
+        var self = this;
+        this.form.submit(function() { self.submit(); return false; })
+    },
+
+    submit: function() {
+        var url = this.form.attr("action");
+        var data = this.form.serialize();
+
+        var self = this;
+
+        $.ajax({
+          type: 'POST',
+          url: url,
+          data: data,
+          success: function() { self.onSuccess(); },
+          error: function() { self.onSuccess(); }
+        });
+    },
+
+    onSuccess: function() {
+        this.form.find(".field input, .receiveEmails").hide();
+        $('<p>Thanks!</p>').hide().insertBefore(this.form.find(".field")).fadeIn('slow');
+    }
+
+};
+$(document).ready(function () {
+    DEG.subscribe.init();
+});
