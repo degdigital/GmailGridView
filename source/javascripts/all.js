@@ -1,27 +1,27 @@
 function GmailGridView($scope) {
 
     $scope.featuredImageCss = "background-image: url('images/featured-image.png');";
-    $scope.googlePlusImageUrl = 'images/sender-image.png';
     $scope.selected = 'form';
 
     var onGooglePlusSuccess = function(data) {
         if ( data.error ) {
 
         } else {
-            console.log(data)
-            console.log(data.displayName);
-            console.log(data.image.url);
             $scope.googlePlusImageUrl = data.image.url;                    
         }
     };
     $scope.setFeaturedImage = function() {
-        $scope.featuredImageCss =  "background-image: url('"+ $scope.featuredImage +"');";
-    },
+        if ($scope.gridForm.featuredImage.$valid && $scope.featuredImage) {
+            $scope.featuredImageCss =  "background-image: url('"+ $scope.featuredImage +"');";
+        } else {
+            $scope.featuredImageCss = "background-image: url('images/featured-image.png');";
+        }
+    };
     $scope.fetchGooglePlusData = function() {
         var url = $scope.googlePlus.split('+');
         var username = url[1];
         var apiUrl = 'https://www.googleapis.com/plus/v1/people/+' + username + '?key=AIzaSyBXM_nPfCNIDkirN6SAXnDQ78sn7dlrN9Y';
-        
+
         $.ajax({
             url: apiUrl,
             dataType: 'jsonp',
@@ -70,4 +70,12 @@ DEG.subscribe = {
 };
 $(document).ready(function () {
     DEG.subscribe.init();
+    $('#grid-view-select').click(function(e) {
+        e.preventDefault();
+        $('#grid-view').toggleClass('selected');
+    });  
+    $('#grid-view-favorite').click(function(e) {
+        e.preventDefault();
+        $(this).toggleClass('active');
+    });  
 });

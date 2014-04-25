@@ -53,6 +53,10 @@ h2 {
 }
 .grid-form {
 	div { margin-top: 1em; }
+	.error {
+		color: red;
+		float: right;
+	}
 }
 fieldset {
 	border: 0;

@@ -27,15 +27,14 @@ title: DEG | Gmail Grid View Generator
 	<form name="gridForm" ng:submit="selected='code'">
 		<div>
 			<label for="featured-image">Featured Image</label>
-			<input id="featured-image" name="featuredImage" type="url" ng-model="featuredImage" ng-blur="setFeaturedImage()" placeholder="Enter an Image URL or Choose Upload" />
+			<input id="featured-image" name="featuredImage" type="url" ng-model="featuredImage" ng-blur="setFeaturedImage()" placeholder="Your Hosted Image URL" />
 			<small>Minimum 580px x 400px</small>
-			<span class="error" ng-show="gridForm.featuredImage.$error.url">Enter a Valid URL</span>
+			<span class="error" ng-show="gridForm.featuredImage.$error.url"><small>Enter a Valid URL</small></span>
 		</div>
 		<div>
 			<label for="company-url-plus">Sender Image</label>
 			<input id="company-url-plus" value="https://plus.google.com/+leejeans/posts" name="googlePlus" type="url" ng-model="googlePlus" ng-blur="fetchGooglePlusData()" placeholder="Your Company Google+ URL" />
-			<small>Optional but recommended—will pull in your company logo</small>
-			<span class="error" ng-show="gridForm.googlePlus.$error.url">Enter a Valid URL</span>
+			<span class="error" ng-show="gridForm.googlePlus.$error.url"><small>Enter a Valid URL</small></span>
 		</div>
 		<div>
 			<label for="company-name">Sender Name</label>
