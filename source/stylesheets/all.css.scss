@@ -51,6 +51,9 @@ h2 {
 .microdata {
 	margin-top: 2em;
 }
+.grid-form {
+	div { margin-top: 1em; }
+}
 fieldset {
 	border: 0;
 	margin: 0;
@@ -62,7 +65,7 @@ input[type=url] {
 	display: block;
 }
 label {
-	margin: 1em 0 0.3em 0;
+	margin: 0 0 0.3em 0;
 	font-weight: bold;
 	&:first-child { margin-top: 0; }
 }
@@ -75,6 +78,23 @@ input[type=url] {
 	background: #fff;
 	border: 1px solid #ccc;
 }
+
+::-webkit-input-placeholder {
+   color: #d1d1d1;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #d1d1d1;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #d1d1d1;  
+}
+
+:-ms-input-placeholder {  
+   color: #d1d1d1;  
+}
+
 button {
 	display: block;
 	padding: 0 1em;

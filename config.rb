@@ -48,12 +48,12 @@
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
-set :build_dir, 'a:\SetDirectory'
+#set :build_dir, 'a:\SetDirectory'
 
 # Build-specific configuration
 configure :build do
   activate :minify_css
-  activate :minify_javascript
+  #activate :minify_javascript
   # activate :cache_buster
   activate :relative_assets
 

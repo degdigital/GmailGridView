@@ -4,5 +4,5 @@ source 'http://rubygems.org'
 
 gem "middleman"
 gem "compass-normalize"
-
+gem "middleman-deploy"
 require 'rbconfig'
