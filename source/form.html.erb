@@ -1,0 +1,50 @@
+---
+layout: false
+---
+
+<%= partial "partials/grid-view" %>
+
+<div class="microdata" ng:show="selected == 'code'">
+    <label>Copy &amp; insert into your email's HTML </label>
+    <pre><span class="tag">&lt;div</span> <span class="atn">itemscope</span> <span class="atn">itemtype</span><span class="pun">=</span><span class="atv">"http://schema.org/EmailMessage"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;div</span> <span class="atn">itemprop</span><span class="pun">=</span><span class="atv">"publisher"</span> <span class="atn">itemscope</span> <span class="atn">itemtype</span><span class="pun">=</span><span class="atv">"http://schema.org/Organization"</span><span class="tag">&gt;</span><span class="pln">
+        </span><span class="tag">&lt;meta</span> <span class="atn">itemprop</span><span class="pun">=</span><span class="atv">"name"</span> <span class="atn">content</span><span class="pun">=</span><span class="atv">"<span id="company-name-markup">{{companyName}}</span>"</span><span class="tag">/&gt;</span><span class="pln">
+        </span><span class="tag">&lt;link</span> <span class="atn">itemprop</span><span class="pun">=</span><span class="atv">"url"</span> <span class="atn">href</span><span class="pun">=</span><span class="atv">"<span id="company-url-markup">{{companyUrl}}</span>"</span><span class="tag">/&gt;</span><span class="pln">
+        </span><span class="tag">&lt;link</span> <span class="atn">itemprop</span><span class="pun">=</span><span class="atv">"url/googlePlus"</span> <span class="atn">href</span><span class="pun">=</span><span class="atv">"<span id="company-url-plus-markup">{{googlePlus}}</span>"</span><span class="tag">/&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+    </span><span class="tag">&lt;div</span> <span class="atn">itemprop</span><span class="pun">=</span><span class="atv">"about"</span> <span class="atn">itemscope</span> <span class="atn">itemtype</span><span class="pun">=</span><span class="atv">"http://schema.org/Offer"</span><span class="tag">&gt;</span><span class="pln"> 
+          </span><span class="tag">&lt;link</span> <span class="atn">itemprop</span><span class="pun">=</span><span class="atv">"image"</span> <span class="atn">href</span><span class="pun">=</span><span class="atv">"<span id="featured-image-markup">{{featuredImage}}</span>"</span><span class="tag">/&gt;</span><span class="pln"></span>
+     <span class="tag">&lt;/div&gt;</span><span class="pln"></span>
+<span class="tag">&lt;/div&gt;</span><span class="pln"></span></pre>
+
+<button ng:click="selected='form'">Edit Grid</button>
+</div>
+
+<div class="grid-form" ng:show="selected == 'form'">
+    <form name="gridForm" ng:submit="submit()" novalidate>
+        <div>
+            <label for="featured-image">Featured Image</label>
+            <input id="featured-image" name="featuredImage" type="url" ng-model="featuredImage" ng-blur="setFeaturedImage()" placeholder="Your Hosted Image URL" />
+            <small>Minimum 580px x 400px</small>
+            <span class="error" ng-show="gridForm.featuredImage.$error.url"><small>Enter a Valid URL</small></span>
+        </div>
+        <div>
+            <label for="company-url-plus">Sender Image</label>
+            <input id="company-url-plus" value="https://plus.google.com/+leejeans/posts" name="googlePlus" type="url" ng-model="googlePlus" ng-blur="fetchGooglePlusData()" placeholder="Your Company Google+ URL" />
+            <span class="error" ng-show="gridForm.googlePlus.$error.url"><small>Enter a Valid URL</small></span>
+        </div>
+        <div>
+            <label for="company-name">Sender Name</label>
+            <input id="company-name" type="text" ng-model="companyName" placeholder="Your Company Name" />
+        </div>
+        <div>
+            <label for="company-url">Sender Homepage</label>
+            <input id="company-url" type="url" ng-model="companyUrl" placeholder="Your Company Homepage" />
+        </div>
+        <div>
+            <label for="subject-line">Subject Line</label>
+            <input id="subject-line" type="text" ng-model="subject" placeholder="For Preview Purposes Only" />
+        </div>
+        <button type="submit">Get the Code</button>
+    </form>
+</div>
