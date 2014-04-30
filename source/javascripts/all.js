@@ -90,8 +90,11 @@
         },
 
         onSuccess: function() {
-            this.form.find(".field input, .receiveEmails").hide();
-            $('<p>Thanks!</p>').hide().insertBefore(this.form.find(".field")).fadeIn('slow');
+            $('.success').hide();
+            $('<p class=\'success\' style=\'margin: 10px 0 0;\'>Thanks! Your code is on the way!</p>').hide().insertAfter(this.form.find("#the-code")).fadeIn('slow');
+
+            this.form.find("#sign-up-form input, .receiveEmails").hide();
+            $('<p class=\'success\'>Thanks!</p>').hide().insertBefore(this.form.find("#sign-up-form")).fadeIn('slow');
         }
 
     };

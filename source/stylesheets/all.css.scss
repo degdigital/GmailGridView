@@ -32,7 +32,17 @@ h2 {
 	font-weight: normal;
 	color: #515151;
 }
-
+h3 {
+	font-size: 1.5em;
+	margin: 0;
+	padding: 0.5em .45em;
+	background: #272727;
+	line-height: 1em;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #fff;
+	border-radius: 6px 6px 0 0;
+}
 .main, .wrap {
 	max-width: 57em;
 	margin: 0 auto;
@@ -72,6 +82,7 @@ label {
 	margin: 0 0 0.3em 0;
 	font-weight: bold;
 	&:first-child { margin-top: 0; }
+	&.the-code { font-size: 1.5em; }
 }
 input[type=text],
 input[type=url] {
@@ -99,7 +110,7 @@ input[type=url] {
    color: #d1d1d1;  
 }
 
-button {
+button, .btn {
 	display: block;
 	padding: 0 1em;
 	margin: 2em 0 0 0;
@@ -132,7 +143,40 @@ button {
 #grid-view {
 	margin: 0 auto;
 }
-
+.get-the-code {
+	margin-top: 3.5em;
+	.stayintouch {
+	padding: 1.5em;
+	border-radius: 0 0 6px 6px;
+	background: #f2f2f2;
+		p {
+			margin: 0 0 1em 0;
+		}
+		.field {
+			@include clearfix;
+			max-width: 17em;
+		}
+		fieldset { padding: 0; }
+		input[type=email] {
+			font-size: .9em;
+			float: left;
+			width: 92%;
+			height: 2.65em;
+			padding: 0 3%;
+			background: #fff;
+			color: #ccc;
+			vertical-align: top;
+			border: 1px solid #d6d6d6;
+			border-radius: 0 0.25em 0.25em 0;
+		}
+		.btn {
+			float: left;
+			margin: 0 0 0 -50px;
+			width: 50px;
+			padding: 0 .5em;
+		}
+	}
+}
 @media only screen and (min-width: 48em) {
 	h1 { font-size: 2.75em; }
 	h2 { font-size: 1.45em; margin: 0 0 3em; }

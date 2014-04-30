@@ -5,7 +5,7 @@ layout: false
 <%= partial "partials/grid-view" %>
 
 <div class="microdata" ng:show="selected == 'code'">
-    <label>Copy &amp; insert into your email's HTML </label>
+    <label class="the-code">Copy &amp; insert into your email's HTML </label>
     <pre><span class="tag">&lt;div</span> <span class="atn">itemscope</span> <span class="atn">itemtype</span><span class="pun">=</span><span class="atv">"http://schema.org/EmailMessage"</span><span class="tag">&gt;</span><span class="pln">
     </span><span class="tag">&lt;div</span> <span class="atn">itemprop</span><span class="pun">=</span><span class="atv">"publisher"</span> <span class="atn">itemscope</span> <span class="atn">itemtype</span><span class="pun">=</span><span class="atv">"http://schema.org/Organization"</span><span class="tag">&gt;</span><span class="pln">
         </span><span class="tag">&lt;meta</span> <span class="atn">itemprop</span><span class="pun">=</span><span class="atv">"name"</span> <span class="atn">content</span><span class="pun">=</span><span class="atv">"<span id="company-name-markup">{{companyName}}</span>"</span><span class="tag">/&gt;</span><span class="pln">
@@ -17,7 +17,24 @@ layout: false
      <span class="tag">&lt;/div&gt;</span><span class="pln"></span>
 <span class="tag">&lt;/div&gt;</span><span class="pln"></span></pre>
 
-<button ng:click="selected='form'">Edit Grid</button>
+    <button ng:click="selected='form'">Edit Grid</button>
+    <div class="get-the-code">
+        <h3><strong>Get</strong> the Code</h3>
+        <section class="stayintouch" id="stayintouch" style="display: block;">
+          <form action="http://cl.exct.net/subscribe.aspx?lid=17770822" name="subscribeForm" method="post">
+            <fieldset>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, laborum, iusto, temporibus, animi dolor.</p>
+              <div class="field" id="the-code">
+                <input type="email" placeholder="Email Address" name="Email Address" id="email-address">
+                <input type="submit" value="GO" class="btn">
+                <input type="hidden" name="thx" value="Success URL">
+                <input type="hidden" name="err" value="Error URL">
+                <input type="hidden" name="MID" value="12358">
+              </div>
+            </fieldset>
+          </form>
+      </section>
+    </div>
 </div>
 
 <div class="grid-form" ng:show="selected == 'form'">
