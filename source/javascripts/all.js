@@ -50,7 +50,7 @@
     angular.module('GmailGridView', ['ngRoute'])
         .config(['$routeProvider', function($routeProvider) {
             $routeProvider.
-                when("/", { 
+                otherwise({ 
                     controller: "FormController", 
                     templateUrl: "form.html"
                 });
