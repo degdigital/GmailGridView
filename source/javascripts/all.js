@@ -48,13 +48,13 @@
     }
 
     angular.module('GmailGridView', ['ngRoute'])
-        .config(function ($routeProvider) {
+        .config(['$routeProvider', function($routeProvider) {
             $routeProvider.
                 when("/", { 
                     controller: "FormController", 
                     templateUrl: "form.html"
                 });
-        })
+        }])
         .controller('FormController', ['$scope', '$location', '$http', FormController]);
     
     // Newsletter Signup
