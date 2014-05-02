@@ -23,12 +23,12 @@ a {
 h1 {
 	font-size: 2em;
 	color: #8dc63f;
-	margin: 0 0 .5em;
+	margin: 0 0 .2em;
 }
 h2 {
 	font-size: 1.25em;
 	line-height: 1.3em;
-	margin: 0 0 2em;
+	margin: 0 0 1em;
 	font-weight: normal;
 	color: #515151;
 }
@@ -43,6 +43,9 @@ h3 {
 	color: #fff;
 	border-radius: 6px 6px 0 0;
 }
+p {
+	line-height: 1.3;
+}
 .main, .wrap {
 	max-width: 57em;
 	margin: 0 auto;
@@ -51,6 +54,7 @@ h3 {
 .main {
 	padding: 2em 1.5em;
 	min-height: 44em;
+	.main-header { margin-bottom: 2em; }
 }
 
 .footer {
@@ -179,10 +183,11 @@ button, .btn {
 }
 @media only screen and (min-width: 48em) {
 	h1 { font-size: 2.75em; }
-	h2 { font-size: 1.45em; margin: 0 0 3em; }
+	h2 { font-size: 1.8em; }
 	.main {
 		@include clearfix;
-		padding: 3em 1.5em;
+		padding: 2em 1.5em 4em;
+		.main-header { margin-bottom: 3em; }
 		.grid-form, .microdata {
 			margin-left: 22em;
 		}

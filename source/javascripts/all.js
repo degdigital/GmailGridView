@@ -1,10 +1,9 @@
 (function() {
-
     function FormController($scope, $location, $http) {
         var params = $location.search();
 
         angular.extend($scope, {
-            selected: 'form',
+            selected: params['selected'] || 'form',
             featuredImageCss: "background-image: url('images/featured-image.png');",
             featuredImage: params['featuredImage'],
             googlePlus: params['googlePlus'],
@@ -56,49 +55,17 @@
                 });
         }])
         .controller('FormController', ['$scope', '$location', '$http', FormController]);
-    
-    // Newsletter Signup
-    var DEG = {};
 
-    DEG.subscribe = {
-        form: null,
+    $("#hidden_newsletter_iframe").on("load", function(event) {
+        event.preventDefault();
+        $('.success, #newsletterSignup .field').hide();
+        $('<p class=\'success\' style=\'margin: 10px 0 0;\'>Thanks!</p>').insertAfter('#newsletterSignup .field').fadeIn('slow');
+    });
 
-        init: function () {
-
-            this.form = $(".stayintouch form");
-
-            if(this.form.length == 0)
-                return;
-
-            var self = this;
-            this.form.submit(function() { self.submit(); return false; })
-        },
-
-        submit: function() {
-            var url = this.form.attr("action");
-            var data = this.form.serialize();
-
-            var self = this;
-
-            $.ajax({
-              type: 'POST',
-              url: url,
-              data: data,
-              success: function() { self.onSuccess(); },
-              error: function() { self.onSuccess(); }
-            });
-        },
-
-        onSuccess: function() {
-            $('.success').hide();
-            $('<p class=\'success\' style=\'margin: 10px 0 0;\'>Thanks! Your code is on the way!</p>').hide().insertAfter(this.form.find("#the-code")).fadeIn('slow');
-
-            this.form.find("#sign-up-form input, .receiveEmails").hide();
-            $('<p class=\'success\'>Thanks!</p>').hide().insertBefore(this.form.find("#sign-up-form")).fadeIn('slow');
-        }
-
-    };
-
-    DEG.subscribe.init();
-
+    $("#hidden_iframe").on("load", function(event) {
+        console.log("asdf");
+        event.preventDefault();
+        $('.success').hide();
+        $('<p class=\'success\' style=\'margin: 10px 0 0;\'>Thanks! Your code is on the way!</p>').insertAfter('#the-code').fadeIn('slow');
+    });
 })();

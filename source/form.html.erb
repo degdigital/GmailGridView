@@ -19,20 +19,24 @@ layout: false
 
     <button ng:click="selected='form'">Edit Grid</button>
     <div class="get-the-code">
-        <h3><strong>Get</strong> the Code</h3>
+        <h3><strong>Save</strong> the Code</h3>
         <section class="stayintouch" id="stayintouch" style="display: block;">
-          <form action="http://cl.exct.net/subscribe.aspx?lid=17770822" name="subscribeForm" method="post">
-            <fieldset>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, laborum, iusto, temporibus, animi dolor.</p>
-              <div class="field" id="the-code">
-                <input type="email" placeholder="Email Address" name="Email Address" id="email-address">
-                <input type="submit" value="GO" class="btn">
-                <input type="hidden" name="thx" value="Success URL">
-                <input type="hidden" name="err" value="Error URL">
-                <input type="hidden" name="MID" value="12358">
-              </div>
-            </fieldset>
-          </form>
+            <script type="text/javascript">var submitted=false;</script>
+            <form id="gridForm" action="http://e.DEGdigital.com/l/18892/2014-04-30/bv8x9" target="hidden_iframe" method="post">
+                <fieldset>
+                  <p>Have the code sent to your inbox for safe keeping, and be the first to know when we create more tools like this!</p>
+                  <div class="field" id="the-code">
+                    <input type="email" placeholder="Email Address" name="email-address" id="email-address" required>
+                    <input name="company-url" type="hidden" value="{{companyUrl}}" />
+                    <input name="company-name" type="hidden" value="{{companyName}}" />
+                    <input name="googlePlus" type="hidden" value="{{googlePlus}}" />
+                    <input name="featuredImage" type="hidden" value="{{featuredImage}}" />
+                    <input name="subject-line" type="hidden" value="{{subject}}" />
+                    <input type="submit" value="GO" class="btn">
+                  </div>
+                  <small class="success">*By entering your email, you're subscribing to DEG's newsletter.</small>
+                </fieldset>
+            </form>
       </section>
     </div>
 </div>
@@ -41,26 +45,25 @@ layout: false
     <form name="gridForm" ng:submit="submit()" novalidate>
         <div>
             <label for="featured-image">Featured Image</label>
-            <input id="featured-image" name="featuredImage" type="url" ng-model="featuredImage" ng-blur="setFeaturedImage()" placeholder="Your Hosted Image URL" />
-            <small>Minimum 580px x 400px</small>
+            <input id="featured-image" name="featuredImage" type="url" ng-model="featuredImage" ng-blur="setFeaturedImage()" placeholder="Minimum 580px x 400px" />
             <span class="error" ng-show="gridForm.featuredImage.$error.url"><small>Enter a Valid URL</small></span>
         </div>
         <div>
-            <label for="company-url-plus">Sender Image</label>
-            <input id="company-url-plus" value="https://plus.google.com/+leejeans/posts" name="googlePlus" type="url" ng-model="googlePlus" ng-blur="fetchGooglePlusData()" placeholder="Your Company Google+ URL" />
+            <label for="company-url-plus">Sender Image (Logo)</label>
+            <input id="company-url-plus" value="https://plus.google.com/+leejeans/posts" name="googlePlus" type="url" ng-model="googlePlus" ng-blur="fetchGooglePlusData()" placeholder="Verified Google+ Page URL" />
             <span class="error" ng-show="gridForm.googlePlus.$error.url"><small>Enter a Valid URL</small></span>
         </div>
         <div>
             <label for="company-name">Sender Name</label>
-            <input id="company-name" type="text" ng-model="companyName" placeholder="Your Company Name" />
+            <input id="company-name" type="text" ng-model="companyName" placeholder="20 characters or less" />
         </div>
         <div>
             <label for="company-url">Sender Homepage</label>
-            <input id="company-url" type="url" ng-model="companyUrl" placeholder="Your Company Homepage" />
+            <input id="company-url" type="url" ng-model="companyUrl" />
         </div>
         <div>
             <label for="subject-line">Subject Line</label>
-            <input id="subject-line" type="text" ng-model="subject" placeholder="For Preview Purposes Only" />
+            <input id="subject-line" type="text" ng-model="subject" placeholder="75 characters or less (but 35 or less is best!)" />
         </div>
         <button type="submit">Get the Code</button>
     </form>
