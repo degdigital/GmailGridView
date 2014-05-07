@@ -68,13 +68,4 @@
         $('.success').hide();
         $('<p class=\'success\' style=\'margin: 10px 0 0;\'>Thanks! Your code is on the way!</p>').insertAfter('#the-code').fadeIn('slow');
     });
-
-    $('#grid-view-select').click(function(e) {
-        e.preventDefault();
-        $('#grid-view').toggleClass('selected');
-    });
-    $('#grid-view-favorite').click(function(e) {
-        e.preventDefault();
-        $(this).toggleClass('active');
-    });
 })();
