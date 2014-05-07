@@ -1,5 +1,10 @@
 .header {
-	@include background(linear-gradient(top, #1982c4 25%, #0f547d 100%));
+	background: #1982c4;
+	background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(33%, #1982c4), color-stop(100%, #0f547d)),#1982c4;
+	background: -webkit-linear-gradient(#1982c4 33%,#0f547d 100%),#1982c4;
+	background: -moz-linear-gradient(#1982c4 33%,#0f547d 100%),#1982c4;
+	background: -o-linear-gradient(#1982c4 33%,#0f547d 100%),#1982c4;
+	background: linear-gradient(#1982c4 33%,#0f547d 100%),#1982c4;
 	padding: 1em 0;
 	img { display: inline-block; }
 }
@@ -164,5 +169,5 @@
 			li a:before { font-size: 42px; }
 	    }
 	}
-	@media only screen and (min-width: 60em) { .stayintouch { input[type=email] { width: 12.5em; } } }
+	@media only screen and (min-width: 60em) { .stayintouch { input[type=email] { width: 11.5em; } } }
 }
