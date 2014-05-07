@@ -9,7 +9,7 @@
             googlePlus: params['googlePlus'],
             companyName: params['companyName'],
             companyUrl: params['companyUrl'],
-            subject: params['subject'].replace(/\+/gi, ' ')
+            subject: params['subject'] ? params['subject'].replace(/\+/gi, ' ') : params['subject']
         })
 
         var onGooglePlusSuccess = function(data) {
