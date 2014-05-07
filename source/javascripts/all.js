@@ -12,7 +12,7 @@
             companyName: cleanParameterString(params['companyName']),
             companyUrl: params['companyUrl'],
             subject: cleanParameterString(params['subject'])
-        })
+        });
 
         var onGooglePlusSuccess = function(data) {
             if ( !data.error )
@@ -29,7 +29,6 @@
                     "background-image": "url('http://e.DEGdigital.com/l/18892/2014-05-05/bvx3r/18892/77132/featured_image.png')"
                 };
             }
-            console.log($scope.featuredImageCss);
         };
         $scope.fetchGooglePlusData = function() {
             if (!$scope.googlePlus)
