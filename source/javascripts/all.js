@@ -7,9 +7,9 @@
             featuredImageCss: "background-image: url('http://e.DEGdigital.com/l/18892/2014-05-05/bvx3r/18892/77132/featured_image.png');",
             featuredImage: params['featuredImage'],
             googlePlus: params['googlePlus'],
-            companyName: params['companyName'],
+            companyName: cleanParameterString(params['companyName']),
             companyUrl: params['companyUrl'],
-            subject: params['subject'] ? params['subject'].replace(/\+/gi, ' ') : params['subject']
+            subject: cleanParameterString(params['subject'])
         })
 
         var onGooglePlusSuccess = function(data) {
@@ -68,4 +68,8 @@
         $('.success').hide();
         $('<p class=\'success\' style=\'margin: 10px 0 0;\'>Thanks! Your code is on the way!</p>').insertAfter('#the-code').fadeIn('slow');
     });
+
+    function cleanParameterString(string) {
+        return string ? string.replace(/\+/gi, ' ') : string;
+    }
 })();
