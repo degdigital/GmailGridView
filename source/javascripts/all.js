@@ -4,7 +4,9 @@
 
         angular.extend($scope, {
             selected: params['selected'] || 'form',
-            featuredImageCss: "background-image: url('http://e.DEGdigital.com/l/18892/2014-05-05/bvx3r/18892/77132/featured_image.png');",
+            featuredImageCss: {
+                "background-image": "url('http://e.DEGdigital.com/l/18892/2014-05-05/bvx3r/18892/77132/featured_image.png')"
+            },
             featuredImage: params['featuredImage'],
             googlePlus: params['googlePlus'],
             companyName: cleanParameterString(params['companyName']),
@@ -19,10 +21,15 @@
 
         $scope.setFeaturedImage = function() {
             if ($scope.gridForm.featuredImage.$valid && $scope.featuredImage) {
-                $scope.featuredImageCss =  "background-image: url('"+ $scope.featuredImage +"');";
+                $scope.featuredImageCss =  {
+                    "background-image": "url('"+ $scope.featuredImage +"')"
+                };
             } else {
-                $scope.featuredImageCss = "background-image: url('http://e.DEGdigital.com/l/18892/2014-05-05/bvx3r/18892/77132/featured_image.png');";
+                $scope.featuredImageCss = {
+                    "background-image": "url('http://e.DEGdigital.com/l/18892/2014-05-05/bvx3r/18892/77132/featured_image.png')"
+                };
             }
+            console.log($scope.featuredImageCss);
         };
         $scope.fetchGooglePlusData = function() {
             if (!$scope.googlePlus)
